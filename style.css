@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+.hero {
+    height: 100vh !important;
+    background-color: #F2F4F7;
+}
+
+.left_content p {
+    line-height: 1.1;
+}
+
+.form_card {
+    width: max-content;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form_card input {
+    width: 360px !important;
+    height: 52px !important;
+}
+
+.login_btn {
+    width: 360px !important;
+    height: 52px !important;
+    background-color: #0866FF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login_btn:hover {
+    background-color: #1877f2;
+    ;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.to_signUp_btn {
+    width: 195px !important;
+    height: 52px !important;
+    background-color: #42b72a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.to_signUp_btn:hover {
+    background-color: #36a420;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.signUpForm{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+}
+.signUp_btn {
+    width: 195px !important;
+    height: 48px !important;
+    background-color: #00a400;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signUp_btn:hover {
+    background-color: #36a420;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.seperation {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(167, 167, 167, 0.4);
+    margin-bottom: 10px;
+}
+
+.signup_container {
+    height: 100vh !important;
+    background-color: #F2F4F7;
+}
+
+.form-label {
+    font-size: 13px !important;
+    color: rgb(96, 103, 112);
+}
