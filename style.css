@@ -28,6 +28,13 @@
     height: 52px !important;
 }
 
+.spinner-border {
+    width: 20px !important;
+    height: 20px !important;
+    border-width: 4px !important; 
+    display: none;
+}
+
 .login_btn {
     width: 360px !important;
     height: 52px !important;
@@ -60,10 +67,12 @@
     background-color: #36a420;
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.signUpForm{
+
+.signUpForm {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
 }
+
 .signUp_btn {
     width: 195px !important;
     height: 48px !important;

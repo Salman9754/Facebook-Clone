@@ -8,6 +8,9 @@ let signUpBtn = document.getElementById('signUpBtn')
 let loginEmail = document.getElementById('loginEmail')
 let loginPassword = document.getElementById('loginPassword')
 let loginBtn = document.getElementById('loginBtn')
+let myLoader = document.getElementById('myLoader')
+let logOutBtn = document.getElementById('logOutBtn')
+
 async function signUpFunction() {
     let selectedGender = null
     gender.forEach((g) => {
@@ -16,14 +19,13 @@ async function signUpFunction() {
         }
     })
     try {
+        myLoader.style.display = 'block'
         const { data, error } = await supabase.auth.signUp({
             email: SignUpEmail.value,
             password: SignUpPassword.value,
         })
         if (error) throw error
         if (data) {
-            console.log(data);
-            alert('Account Created')
             try {
                 const { error: dataError } = await supabase
                     .from('users')
@@ -35,10 +37,16 @@ async function signUpFunction() {
                         email: SignUpEmail.value
                     })
                 if (dataError) throw dataError
-                window.location.href = 'index.html'
+                myLoader.style.display = 'none'
+                setTimeout(() => {
+                    window.location.href = 'index.html'
+                }, 1000)
             } catch (error) {
-                console.log(error);
-
+                Swal.fire({
+                    title: "Error",
+                    text: error.message,
+                    icon: "error"
+                });
             }
 
         }
@@ -52,21 +60,49 @@ if (signUpBtn) {
 
 async function login() {
     try {
+        myLoader.style.display = 'block'
         const { data, error } = await supabase.auth.signInWithPassword({
             email: loginEmail.value,
             password: loginPassword.value,
         })
         if (error) throw error
         if (data) {
-            console.log(data);
-            alert('Logged In')
+            myLoader.style.display = 'none'
+            setTimeout(() => {
+                window.location.href = 'home.html'
+            }, 1000)
         }
     } catch (error) {
-        console.log(error);
-        alert(error.message)
+        myLoader.style.display = 'none'
+        Swal.fire({
+            title: "Error",
+            text: error.message,
+            icon: "error"
+        });
     }
 
 }
-if(loginBtn){
-    loginBtn.addEventListener('click',login)
+if (loginBtn) {
+    loginBtn.addEventListener('click', login)
 }
+
+async function logOut() {
+    try {
+        const { error } = await supabase.auth.signOut()
+        if (error) throw error
+        setTimeout(() => {
+            window.location.href = 'index.html'
+        }, 1000)
+    } catch (error) {
+        Swal.fire({
+            title: "Error",
+            text: error.message,
+            icon: "error"
+        });
+    }
+
+}
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', logOut)
+}
+

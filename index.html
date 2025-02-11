@@ -19,11 +19,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
-                  <div class="left_content text-center">
-                    <p><img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="" width="320px"
-                        height="110px"></p>
-                <p class="fs-3 ms-4">Facebook helps you connect and share with the people in your life.</p>
-                  </div>
+                    <div class="left_content text-center">
+                        <p><img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="" width="320px"
+                                height="110px"></p>
+                        <p class="fs-3 ms-4">Facebook helps you connect and share with the people in your life.</p>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
                     <div class="form_section">
@@ -35,14 +35,17 @@
                                 <input type="password" class="form-control" id="loginPassword" placeholder="Password">
                             </div>
                             <div class="mb-3">
-                                <button class="login_btn fs-5" id="loginBtn">Log in</button>
+                                <button class="login_btn fs-5 d-flex justify-content-center align-items-center gap-2" id="loginBtn">Log in  
+                                    <div class="spinner-border text-light" role="status" id="myLoader"></div>
+                            </button>
                             </div>
                             <div class="mb-3">
                                 <a href="#">Forgotten Password?</a>
                             </div>
                             <div class="seperation"></div>
                             <div class="mb-2 mt-3">
-                                <button class="to_signUp_btn fs-6">Create new account</button>
+                                <a href="signUp.html"><button class="to_signUp_btn fs-6">Create new account
+                                    </button></a>
                             </div>
                         </div>
                     </div>
@@ -57,5 +60,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>
